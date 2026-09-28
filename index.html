@@ -30,7 +30,7 @@
   --sidebar-text: #2a2630;
   --sidebar-mid:  #6a6272;
   --sidebar-rule: rgba(90,60,140,0.12);
-  --sidebar-accent: #7c5cbf;
+  --sidebar-accent: #7c5cbf;d
 
   --ink:          #1c1820;
   --ink-mid:      #4a4452;
@@ -669,13 +669,15 @@ body {
 
 <script>
 // ── INLINE CV DATA ────────────────────────────────────────────
-const CV_DATA = {
+//"summary": "Qualified Kindergarten Teacher and Nanny with 10+ years of childcare experience in kindergartens, private households, and international family settings.",
+    
+  const CV_DATA = {
   "basics": {
     "name": "Iris Kocks",
     "nationality": "Dutch/German",
-    "summary": "Qualified Kindergarten Teacher and Nanny with 10+ years of childcare experience in kindergartens, private households, and international family settings.",
+    "summary": "Qualified Kindergarten Teacher and Nanny with 10+ years of childcare experience in kindergartens, private households, and international family settings. Experienced with newborns, toddlers, and school-aged children, offering calm, reliable, and emotionally attuned care. Adaptable and confident working with different family cultures, creating safe, structured, and nurturing daily routines. Multilingual and experienced with both group care and one-on-one childcare."
     "location": { "countryCode": "DE", "region": "Germany / Netherlands" },
-    "phone": "+49 015221557217",
+    "phone": "+49 (0)15221557217",
     "email": "iriskocks39@gmail.com",
     "profiles": []
   },
@@ -774,10 +776,10 @@ const CV_DATA = {
     {
       "institution": "Harvard University ",
       "area": "Early Childhood Development: Global Strategies for Implementation",
-      "studyType": "-",
+      "studyType": ""
       "startDate": "2026-09-01",
-      "endDate": "",
-      "location": "-"
+      "endDate": "current",
+  
     },
     {
       "institution": "RBZ1 Kiel",
@@ -1205,7 +1207,7 @@ function buildPage(data) {
   const yearStart = data.work.reduce((min,j) => j.startDate<min ? j.startDate : min, '9999').split('-')[0];
   const yearEnd   = data.work.reduce((max,j) => j.endDate  >max ? j.endDate   : max, '0000').split('-')[0];
   const tagline = el('div', 'main-tagline');
-  tagline.textContent = 'Qualified Kindergarten Teacher and Nanny with 10+ years of childcare experience in kindergartens, private households, and international family settings. Experienced with newborns, toddlers, and school-aged children, offering calm, reliable, and emotionally attuned care. Adaptable and confident working with different family cultures, creating safe, structured, and nurturing daily routines. Multilingual and experienced with both group care and one-on-one childcare. · ' + yearStart + '\u00a0–\u00a0' + yearEnd;
+  tagline.textContent = 'Qualified Kindergarten Teacher and Nanny with 10+ years of childcare experience in kindergartens, private households, and international family settings. Experienced with newborns, toddlers, and school-aged children, offering calm, reliable, and emotionally attuned care. Adaptable and confident working with different family cultures, creating safe, structured, and nurturing daily routines. Multilingual and experienced with both group care and one-on-one childcare.' // + yearStart + '\u00a0–\u00a0' + yearEnd;
   header.appendChild(tagline);
   main.appendChild(header);
 
