@@ -252,7 +252,9 @@ body {
 .edu-entry { display: grid; grid-template-columns: var(--label-w) 1fr; gap: 0 1.25rem; margin-bottom: 1.25rem; }
 .edu-year { font-size: 13px; color: var(--ink-light); padding-top: 2px; text-align: right; }
 .edu-title { font-size: 16px; font-weight: 500; color: var(--ink); }
-.edu-inst  { font-size: 14px; color: var(--ink-mid); margin-top: 1px; }
+.edu-spec { font-size: 15px;color: var(--ink-mid); }
+
+  .edu-inst  { font-size: 14px; color: var(--ink-mid); margin-top: 1px; }
 
 /* ── GANTT ── */
 .gantt-wrap { width: 100%; }
@@ -783,7 +785,8 @@ body {
     },
     {
       "institution": "RBZ1 Kiel",
-      "area": "Kindergarten teacher, specialized in Therapeutic Education and Child & Adolescent Psychiatry (Heilpädagogik / Psychiatrie",
+      "area": "Kindergarten teacher",
+       "spec": "specialized in Therapeutic Education and Child & Adolescent Psychiatry (Heilpädagogik / Psychiatrie",
       "studyType": "Secondary education Level 6",
       "startDate": "2015-09-01",
       "endDate": "2018-06-30",
@@ -1063,6 +1066,7 @@ function buildEducationSection(eduData) {
     entry.appendChild(el('div', 'edu-year', startY + ' – ' + endY));
     const body = el('div');
     body.appendChild(el('div', 'edu-title', (e.studyType||'') + ' ' + (e.area||'')));
+    body.appendChild(el('div', 'edu-spec',  (e.spec?  e.spec : '')    ));
     body.appendChild(el('div', 'edu-inst',
       e.institution + (e.location ? ' · ' + e.location : '')
     ));
